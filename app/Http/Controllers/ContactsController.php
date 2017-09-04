@@ -69,7 +69,9 @@ class ContactsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+        $contact->update($request->all());
+        return $contact;
     }
 
     /**
@@ -80,6 +82,8 @@ class ContactsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+        return $contact;
     }
 }
