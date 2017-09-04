@@ -26,5 +26,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 //Sve ovo se menja sledecom linijom:
 
-route::resource('contacts', 'ContactsController::class');
+Route::resource('contacts', 'ContactsController');
 
