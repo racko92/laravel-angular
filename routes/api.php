@@ -28,5 +28,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 //Sve ovo se menja sledecom linijom:
 
 Route::middleware('jwt')->resource('contacts', 'ContactsController');
-
 Route::post('login', 'Auth\LoginController@authenticate');
