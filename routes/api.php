@@ -29,3 +29,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::middleware('jwt')->resource('contacts', 'ContactsController');
 
+Route::post('login', 'Auth\LoginController@authenticate');
