@@ -19,13 +19,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 //
-//Route::get('contacts', 'ContactsController@index');
-//Route::get('contacts/{id}', 'ContactsController@show');
-//Route::delete('contacts/{id}', 'ContactsController@destroy');
-//Route::post('contacts', 'ContactsController@store');
-//Route::put('contacts/{id}', 'ContactsController@update');
+//Route::middleware('jwt')->get('contacts', 'ContactsController@index');
+//Route::middleware('jwt')->get('contacts/{id}', 'ContactsController@show');
+//Route::middleware('jwt')->delete('contacts/{id}', 'ContactsController@destroy');
+//Route::middleware('jwt')->post('contacts', 'ContactsController@store');
+//Route::middleware('jwt')->put('contacts/{id}', 'ContactsController@update');
 
 //Sve ovo se menja sledecom linijom:
 
-Route::resource('contacts', 'ContactsController');
+Route::middleware('jwt')->resource('contacts', 'ContactsController');
 
